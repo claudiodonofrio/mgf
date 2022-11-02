@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: MultiplGapFilling
+Version: 1.0.2
+Summary: Multiple gap-filling tool for or eddy covariance datasets
+Home-page: https://www.icos-cp.eu/
+Author: Lucas-Moffat Antje
+Author-email: Antje.Lucas-Moffat@dwd.de
+License: GPLv3+
+Project-URL: Source, https://github.com/claudiodonofrio/mgf
+Project-URL: Documentation, https://doi.org/10.1016/j.agrformet.2022.109114
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: English
+Classifier: Topic :: Scientific/Engineering :: Atmospheric Science
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+
+Antje M. Lucas-Moffat, Frederik Schrader, Mathias Herbst, Christian BrÃ¼mmer,
+Multiple gap-filling for eddy covariance datasets,
+Agricultural and Forest Meteorology,
+Volume 325,
+2022,
+109114,
+ISSN 0168-1923,
+https://doi.org/10.1016/j.agrformet.2022.109114.
+(https://www.sciencedirect.com/science/article/pii/S016819232200301X)
+Abstract: With novel developments in technology, eddy covariance flux measurements have become feasible for a variety of trace gases. While the statistical properties and gap-filling strategies have been well examined for carbon dioxide, these are much less understood for other gases. Here, we propose a universal methodology deploying multiple gap-filling techniques and artificial gap scenarios to evaluate the techniquesâ€™ performances, infer the statistical flux properties, and fill the real gaps in eddy covariance datasets of any trace gas. The methodology was implemented in a gap-filling framework with techniques spanning from simple and diurnal interpolations, look-up tables, artificial neural networks, to an inferential model. For the new scheme of half-hourly and daily artificial gaps, each additional gap was superimposed one at a time (thus keeping the disturbance to a minimum) for the whole dataset and the scenarios were resampled by bootstrapping. The gap-filled sums were then estimated from the ensemble of well-performing gap-filling techniques. The gap-filling framework was applied to campaign data of three different trace gases (51 days of ammonia, 79 days of total reactive nitrogen, and 89 days of methane flux measurements). The aggregated fluxes are stated as ensemble ranges of multiple techniques plus the techniquesâ€™ uncertainties. Additionally, the framework was used to gap-fill a full year of carbon dioxide flux measurements yielding similar performances as previously reported. Based on a review of gap-filling comparison studies and on our findings, we suggest reconsidering the standard procedure of using one gap-filling technique for multi-site studies. Deploying multiple gap-filling techniques and providing ensemble results of gap-filled sums will help to minimize the influence of a single technique and thus lead to a more robust flux aggregation. Furthermore, the estimated overall uncertainty will be more realistic by accounting for the ensemble range of multiple techniques.
+Keywords: Eddy covariance fluxes; trace gases; artificial gap scenarios; bootstrapping; multiple gap-filling; ensemble results

@@ -1,0 +1,283 @@
+*** Loaded ini: ./example/DE-BaF_tNr/tNr_BaF_2016_v03.ini
+*** Fill gaps for: tNr_BaF_v07_mgf.csv with 3792 data rows which equals 79.0 days. ***
+Checks: Time stamps are unique: True
+Checks: Length of time stamps are a multiple of complete days: True
+Checks: First day starts at first half-hour (Fluxnet convention 0:30): True
+Checks: Last day ends at mid night (Fluxnet convention 0:00 next day): True
+Checks: Time stamps consist of continuous half-hours: True
+Checks: Name of new to be filled column FluX_tNr is unique: True
+New column created with fluxes to fill for FluX_tNr with flagging ( Nr_qc <= 1 )
+Checks: Longest gap in fluxes is smaller than ten days: True (Max gap size: 103 hhs)
+Directory created: ./example/DE-BaF_tNr/202208121237/_in
+Directory created: ./example/DE-BaF_tNr/202208121237/_mgf
+Directory created: ./example/DE-BaF_tNr/202208121237/_res
+Directory created: ./example/DE-BaF_tNr/202208121237/_plots
+*** Original data file copied to ./202208121237/_in/tNr_BaF_v07_mgf.csv ***
+*** Ini settings loaded and saved to ./202208121237/_mgf/ini_202208121237.ini ***
+Checks: Number of gaps in all columns:
+FluX_tNr 986, Nr_F 986, Nr_qc 2, Nr_C 0, Nox_C 0, NEE 1973, NEE_qc 7, Rg 0, Temp 0, RH 0, VPD 0, Precip 0, ws 0, wd 0, ustar 0
+*** Results saved to _res/../_mgf/gf_FluxData_tNr_202208121237.csv
+*** Original flux data loaded and saved to:  _res/../_mgf/gf_FluxData_tNr_202208121237.csv ***
+*** The following techniques will be applied: ['WDM', 'FDA_hh6', 'MDA_hh5', 'MDC_d3', 'MDC_d7', 'LUT_V1_d3', 'LUT_V1_d7', 'LUT_V1V2_d3', 'LUT_V1V2_d7', 'LUT_V1V2V3_d3', 'LUT_V1V2V3_d7', 'LUT_MDS_d7', 'IP_lin', 'IP_mov'] ***
+>>> Fill technique: IP_lin_hhs
+>>> Fill technique: IP_mov_hhs
+>>> Fill technique: WDM_hhs    ( ((data.Rg[i_g] > 5.0) & (df_window.Rg > 5.0)) | ((data.Rg[i_g] <= 5.0) & (df_window.Rg <= 5.0)) )
+>>> Fill technique: FDA_hh6_hhs    ( df_window.Rg != True )
+>>> Fill technique: MDA_hh5_hhs    ( df_window.Rg != True )
+>>> Fill technique: MDC_d3_hhs    ( df_window.Rg != True )
+>>> Fill technique: MDC_d7_hhs    ( df_window.Rg != True )
+>>> Fill technique: LUT_V1_d3_hhs    ( (abs(df_window.Nr_C - data.Nr_C[i_g]) <= 0.6) )
+>>> Fill technique: LUT_V1_d7_hhs    ( (abs(df_window.Nr_C - data.Nr_C[i_g]) <= 0.6)  )
+>>> Fill technique: LUT_V1V2_d3_hhs    ( (abs(df_window.Nr_C - data.Nr_C[i_g]) <= 0.6) & (abs(df_window.Rg - data.Rg[i_g]) <= 50.0) )
+>!  26 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+>>> Fill technique: LUT_V1V2_d7_hhs    ( (abs(df_window.Nr_C - data.Nr_C[i_g]) <= 0.6) & (abs(df_window.Rg - data.Rg[i_g]) <= 50.0) )
+>!  28 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+>>> Fill technique: LUT_V1V2V3_d3_hhs    ( (abs(df_window.Nr_C- data.Nr_C[i_g]) <= 0.6) & (abs(df_window.Rg - data.Rg[i_g]) <= 50.0) & (abs(df_window.ustar - data.ustar[i_g]) <= 0.1) )
+>!  129 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+>>> Fill technique: LUT_V1V2V3_d7_hhs    ( (abs(df_window.Nr_C - data.Nr_C[i_g]) <= 0.6) & (abs(df_window.Rg - data.Rg[i_g]) <= 50.0) & (abs(df_window.ustar - data.ustar[i_g]) <= 0.1) )
+>!  135 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+>>> Fill technique: LUT_MDS_d7_hhs    ( (abs(df_window.Rg - data.Rg[i_g]) <= 50.0) & (abs(df_window.Temp - data.Temp[i_g]) <= 2.5) & (abs(df_window.VPD - data.VPD[i_g]) <= 5.0) )
+>LUT_MDS: window size: 7 , remaining gaps: 29  of 3792 , in percent:  0.76
+>LUT_MDS: window size: 14 , remaining gaps: 22  of 3792 , in percent:  0.58
+>LUT_MDS: window size: 21 , remaining gaps: 16  of 3792 , in percent:  0.42
+>LUT_MDS: window size: 28 , remaining gaps: 10  of 3792 , in percent:  0.26
+>LUT_MDS: window size: 35 , remaining gaps: 10  of 3792 , in percent:  0.26
+>!  10 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+Checks: GFT run time from  2022-08-12 12:37:39.881128  to  2022-08-12 12:39:59.064903
+>>> Fill technique: IP_lin_days
+>>> Fill technique: IP_mov_days
+>>> Fill technique: WDM_days    ( ((data.Rg[i_g] > 5.0) & (df_window.Rg > 5.0)) | ((data.Rg[i_g] <= 5.0) & (df_window.Rg <= 5.0)) )
+>>> Fill technique: FDA_hh6_days    ( df_window.Rg != True )
+>>> Fill technique: MDA_hh5_days    ( df_window.Rg != True )
+>>> Fill technique: MDC_d3_days    ( df_window.Rg != True )
+>>> Fill technique: MDC_d7_days    ( df_window.Rg != True )
+>>> Fill technique: LUT_V1_d3_days    ( (abs(df_window.Nr_C - data.Nr_C[i_g]) <= 0.6) )
+>!  5 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+>>> Fill technique: LUT_V1_d7_days    ( (abs(df_window.Nr_C - data.Nr_C[i_g]) <= 0.6)  )
+>!  5 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+>>> Fill technique: LUT_V1V2_d3_days    ( (abs(df_window.Nr_C - data.Nr_C[i_g]) <= 0.6) & (abs(df_window.Rg - data.Rg[i_g]) <= 50.0) )
+>!  41 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+>>> Fill technique: LUT_V1V2_d7_days    ( (abs(df_window.Nr_C - data.Nr_C[i_g]) <= 0.6) & (abs(df_window.Rg - data.Rg[i_g]) <= 50.0) )
+>!  42 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+>>> Fill technique: LUT_V1V2V3_d3_days    ( (abs(df_window.Nr_C- data.Nr_C[i_g]) <= 0.6) & (abs(df_window.Rg - data.Rg[i_g]) <= 50.0) & (abs(df_window.ustar - data.ustar[i_g]) <= 0.1) )
+>!  179 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+>>> Fill technique: LUT_V1V2V3_d7_days    ( (abs(df_window.Nr_C - data.Nr_C[i_g]) <= 0.6) & (abs(df_window.Rg - data.Rg[i_g]) <= 50.0) & (abs(df_window.ustar - data.ustar[i_g]) <= 0.1) )
+>!  188 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+>>> Fill technique: LUT_MDS_d7_days    ( (abs(df_window.Rg - data.Rg[i_g]) <= 50.0) & (abs(df_window.Temp - data.Temp[i_g]) <= 2.5) & (abs(df_window.VPD - data.VPD[i_g]) <= 5.0) )
+>LUT_MDS: window size: 7 , remaining gaps: 79  of 3792 , in percent:  2.08
+>LUT_MDS: window size: 14 , remaining gaps: 57  of 3792 , in percent:  1.50
+>LUT_MDS: window size: 21 , remaining gaps: 33  of 3792 , in percent:  0.87
+>LUT_MDS: window size: 28 , remaining gaps: 25  of 3792 , in percent:  0.66
+>LUT_MDS: window size: 35 , remaining gaps: 24  of 3792 , in percent:  0.63
+>!  24 remaining gaps. Break since window size:  42  is larger than half of total days:  39.5 .)
+Checks: GFT run time from  2022-08-12 12:37:39.881128  to  2022-08-12 12:43:07.646432
+*** Results saved to _res/../_mgf/mgf_Scenarios_tNr_202208121237.csv
+*** Gap filling of scenarios with several techniques finished for tNr , run number: 202208121237 ***
+*** Loaded ini: ./example/DE-BaF_tNr/./202208121237/_mgf/ini_202208121237.ini
+*** Loaded results of GFT scenarios for : ['IP_lin_hhs' 'IP_mov_hhs' 'WDM_hhs' 'FDA_hh6_hhs' 'MDA_hh5_hhs'
+ 'MDC_d3_hhs' 'MDC_d7_hhs' 'LUT_V1_d3_hhs' 'LUT_V1_d7_hhs'
+ 'LUT_V1V2_d3_hhs' 'LUT_V1V2_d7_hhs' 'LUT_V1V2V3_d3_hhs'
+ 'LUT_V1V2V3_d7_hhs' 'LUT_MDS_d7_hhs']
+Checks: Timestamps of model file equal time stamps of data file: True
+*** Loaded model results with columns: ['ANN_CRU_hhs' 'ANN_all_hhs' 'ANN_CRU_days' 'ANN_all_days']
+*** Results saved to _mgf/mgf_Models_tNr_202208121237.csv
+*** Results saved to _res/mgf_FilledReal_tNr_202208121237.csv
+*** Results saved to _mgf/mgf_AllData_tNr_202208121237.csv
+*** All data (fluxes, models, scenarios, filled real gaps) saved ***
+*** Results saved to _res/descr_tNr_202208121237_ini.csv
+Plot saved to: _plots/pgd_tNr_202208121237_real.pdf
+Plot saved to: _plots/psc_tNr_202208121237_hhs.pdf
+Plot saved to: _plots/psc_tNr_202208121237_days.pdf
+Plot saved to: _plots/psc_tNr_202208121237_hhs_resid.pdf
+Plot saved to: _plots/psc_tNr_202208121237_days_resid.pdf
+Plot saved to: _plots/pts_tNr_202208121237_fluxes_cplt_hhs.pdf
+Plot saved to: _plots/pts_tNr_202208121237_fluxes_cplt_days.pdf
+Plot saved to: _plots/pts_tNr_202208121237_fluxes_real_hhs.pdf
+Plot saved to: _plots/pts_tNr_202208121237_cums_cplt_hhs.pdf
+Plot saved to: _plots/pts_tNr_202208121237_cums_cplt_days.pdf
+Plot saved to: _plots/pds_tNr_202208121237_daily_real.pdf
+*** Loaded ini: ./example/DE-BaF_tNr/./202208121237/_mgf/ini_202208121237.ini
+*** Loaded all data (fluxes, meteo, models, scenarios, filled real gaps) for run tNr 202208121237
+>>> Bootstrapping full-time:
+>>> Number of artificial gaps used for bootstrapping ' hhs ': 2688
+*! Missing artificial gaps due to (partially) incomplete techniques: 118
+>>> Settings for bootstrapping: repetitions = 999 , percent of data = 50 , seed = 99
+IP_lin_hhs 999 50 , Bias: -0.26 0.68 , SDev: 20.88 0.75 , R2: 0.34 0.04
+IP_mov_hhs 999 50 , Bias: -0.40 0.66 , SDev: 19.98 0.73 , R2: 0.35 0.03
+WDM_hhs 999 50 , Bias: -0.52 0.69 , SDev: 23.09 0.79 , R2: 0.18 0.02
+FDA_hh6_hhs 999 50 , Bias: -0.25 0.68 , SDev: 21.67 0.77 , R2: 0.27 0.03
+MDA_hh5_hhs 999 50 , Bias: -0.43 0.66 , SDev: 20.14 0.73 , R2: 0.34 0.03
+MDC_d3_hhs 999 50 , Bias: -1.15 0.75 , SDev: 25.86 0.82 , R2: 0.12 0.02
+MDC_d7_hhs 999 50 , Bias: -1.05 0.70 , SDev: 23.67 0.80 , R2: 0.15 0.02
+LUT_V1_d3_hhs 999 50 , Bias: -0.41 0.67 , SDev: 22.84 0.74 , R2: 0.20 0.04
+LUT_V1_d7_hhs 999 50 , Bias: -0.52 0.69 , SDev: 23.20 0.76 , R2: 0.18 0.04
+LUT_V1V2_d3_hhs 999 50 , Bias: 0.06 0.70 , SDev: 21.78 0.75 , R2: 0.23 0.03
+LUT_V1V2_d7_hhs 999 50 , Bias: -0.11 0.67 , SDev: 21.43 0.75 , R2: 0.25 0.03
+LUT_V1V2V3_d3_hhs 999 50 , Bias: 0.22 0.73 , SDev: 21.73 0.79 , R2: 0.23 0.03
+LUT_V1V2V3_d7_hhs 999 50 , Bias: 0.30 0.69 , SDev: 21.35 0.77 , R2: 0.24 0.03
+LUT_MDS_d7_hhs 999 50 , Bias: -1.22 0.69 , SDev: 22.78 0.76 , R2: 0.18 0.02
+ANN_CRU_hhs 999 50 , Bias: -0.19 0.64 , SDev: 19.87 0.76 , R2: 0.28 0.02
+ANN_all_hhs 999 50 , Bias: -0.23 0.60 , SDev: 18.60 0.71 , R2: 0.38 0.03
+>>> Number of artificial gaps used for bootstrapping ' days ': 2631
+*! Missing artificial gaps due to (partially) incomplete techniques: 175
+>>> Settings for bootstrapping: repetitions = 999 , percent of data = 50 , seed = 99
+IP_lin_days 999 50 , Bias: -1.80 1.95 , SDev: 27.00 1.69 , R2: 0.01 0.01
+IP_mov_days 999 50 , Bias: -1.78 1.93 , SDev: 26.89 1.70 , R2: 0.01 0.01
+WDM_days 999 50 , Bias: -1.10 1.86 , SDev: 24.77 1.65 , R2: 0.07 0.03
+FDA_hh6_days 999 50 , Bias: -0.86 1.90 , SDev: 26.03 1.65 , R2: 0.09 0.03
+MDA_hh5_days 999 50 , Bias: -0.92 1.93 , SDev: 25.52 1.67 , R2: 0.10 0.04
+MDC_d3_days 999 50 , Bias: -1.43 1.60 , SDev: 25.48 1.37 , R2: 0.12 0.03
+MDC_d7_days 999 50 , Bias: -1.20 1.54 , SDev: 23.37 1.25 , R2: 0.15 0.04
+LUT_V1_d3_days 999 50 , Bias: -0.70 1.30 , SDev: 23.30 1.30 , R2: 0.16 0.06
+LUT_V1_d7_days 999 50 , Bias: -0.84 1.46 , SDev: 23.67 1.41 , R2: 0.12 0.06
+LUT_V1V2_d3_days 999 50 , Bias: -0.54 1.33 , SDev: 23.32 1.45 , R2: 0.16 0.04
+LUT_V1V2_d7_days 999 50 , Bias: -0.47 1.27 , SDev: 22.30 1.30 , R2: 0.19 0.04
+LUT_V1V2V3_d3_days 999 50 , Bias: 0.10 1.30 , SDev: 23.31 1.23 , R2: 0.16 0.04
+LUT_V1V2V3_d7_days 999 50 , Bias: 0.21 1.24 , SDev: 22.58 1.22 , R2: 0.18 0.03
+LUT_MDS_d7_days 999 50 , Bias: -1.86 1.54 , SDev: 23.80 1.28 , R2: 0.13 0.03
+ANN_CRU_days 999 50 , Bias: -0.18 1.28 , SDev: 19.64 1.23 , R2: 0.27 0.04
+ANN_all_days 999 50 , Bias: -0.21 1.15 , SDev: 18.61 1.17 , R2: 0.34 0.04
+*** Results saved to _mgf/boot_tNr_202208121237_ft_hhs.csv
+*** Results saved to _mgf/boot_tNr_202208121237_ft_days.csv
+>>> Bootstrapping day-time:
+>>> Number of artificial gaps used for bootstrapping ' hhs ': 1705
+*! Missing artificial gaps due to (partially) incomplete techniques: 112
+>>> Settings for bootstrapping: repetitions = 999 , percent of data = 50 , seed = 99
+IP_lin_hhs 999 50 , Bias: -0.42 0.99 , SDev: 25.10 1.05 , R2: 0.30 0.04
+IP_mov_hhs 999 50 , Bias: -0.69 0.96 , SDev: 24.25 1.03 , R2: 0.30 0.04
+WDM_hhs 999 50 , Bias: -0.80 1.02 , SDev: 28.33 1.12 , R2: 0.11 0.02
+FDA_hh6_hhs 999 50 , Bias: -0.47 0.99 , SDev: 26.31 1.11 , R2: 0.22 0.03
+MDA_hh5_hhs 999 50 , Bias: -0.76 0.96 , SDev: 24.31 1.04 , R2: 0.30 0.04
+MDC_d3_hhs 999 50 , Bias: -1.66 1.09 , SDev: 30.39 1.15 , R2: 0.09 0.02
+MDC_d7_hhs 999 50 , Bias: -1.65 1.03 , SDev: 28.05 1.14 , R2: 0.11 0.02
+LUT_V1_d3_hhs 999 50 , Bias: 4.00 0.95 , SDev: 24.97 1.06 , R2: 0.23 0.05
+LUT_V1_d7_hhs 999 50 , Bias: 4.09 0.96 , SDev: 25.34 1.08 , R2: 0.21 0.04
+LUT_V1V2_d3_hhs 999 50 , Bias: 0.01 1.01 , SDev: 26.24 1.05 , R2: 0.19 0.04
+LUT_V1V2_d7_hhs 999 50 , Bias: -0.32 0.97 , SDev: 25.68 1.04 , R2: 0.21 0.04
+LUT_V1V2V3_d3_hhs 999 50 , Bias: 0.14 1.07 , SDev: 27.53 1.11 , R2: 0.17 0.03
+LUT_V1V2V3_d7_hhs 999 50 , Bias: 0.16 1.02 , SDev: 26.84 1.10 , R2: 0.18 0.03
+LUT_MDS_d7_hhs 999 50 , Bias: -1.89 1.02 , SDev: 27.67 1.09 , R2: 0.13 0.02
+ANN_CRU_hhs 999 50 , Bias: -0.80 0.94 , SDev: 24.51 1.08 , R2: 0.22 0.03
+ANN_all_hhs 999 50 , Bias: -0.82 0.88 , SDev: 22.80 1.01 , R2: 0.34 0.03
+>>> Number of artificial gaps used for bootstrapping ' days ': 1651
+*! Missing artificial gaps due to (partially) incomplete techniques: 166
+>>> Settings for bootstrapping: repetitions = 999 , percent of data = 50 , seed = 99
+IP_lin_days 999 50 , Bias: 3.99 2.36 , SDev: 28.81 2.08 , R2: 0.02 0.02
+IP_mov_days 999 50 , Bias: 4.01 2.33 , SDev: 28.64 2.08 , R2: 0.02 0.02
+WDM_days 999 50 , Bias: -1.67 2.61 , SDev: 30.74 2.09 , R2: 0.02 0.02
+FDA_hh6_days 999 50 , Bias: -1.35 2.66 , SDev: 30.70 2.09 , R2: 0.06 0.03
+MDA_hh5_days 999 50 , Bias: -1.51 2.70 , SDev: 30.36 2.12 , R2: 0.07 0.04
+MDC_d3_days 999 50 , Bias: -2.03 2.28 , SDev: 30.01 1.82 , R2: 0.09 0.03
+MDC_d7_days 999 50 , Bias: -1.84 2.14 , SDev: 27.77 1.61 , R2: 0.11 0.03
+LUT_V1_d3_days 999 50 , Bias: 3.75 1.62 , SDev: 25.58 1.56 , R2: 0.19 0.06
+LUT_V1_d7_days 999 50 , Bias: 3.79 1.83 , SDev: 25.99 1.76 , R2: 0.13 0.06
+LUT_V1V2_d3_days 999 50 , Bias: -0.83 1.74 , SDev: 28.44 1.92 , R2: 0.13 0.04
+LUT_V1V2_d7_days 999 50 , Bias: -0.84 1.70 , SDev: 26.94 1.70 , R2: 0.16 0.04
+LUT_V1V2V3_d3_days 999 50 , Bias: -0.10 1.79 , SDev: 29.06 1.64 , R2: 0.12 0.03
+LUT_V1V2V3_d7_days 999 50 , Bias: -0.09 1.74 , SDev: 28.11 1.66 , R2: 0.13 0.03
+LUT_MDS_d7_days 999 50 , Bias: -2.81 2.17 , SDev: 29.18 1.73 , R2: 0.08 0.02
+ANN_CRU_days 999 50 , Bias: -0.69 1.82 , SDev: 24.34 1.70 , R2: 0.21 0.03
+ANN_all_days 999 50 , Bias: -0.68 1.65 , SDev: 22.98 1.61 , R2: 0.29 0.04
+*** Results saved to _mgf/boot_tNr_202208121237_dt_hhs.csv
+*** Results saved to _mgf/boot_tNr_202208121237_dt_days.csv
+>>> Bootstrapping night-time:
+>>> Number of artificial gaps used for bootstrapping ' hhs ': 983
+*! Missing artificial gaps due to (partially) incomplete techniques: 6
+>>> Settings for bootstrapping: repetitions = 999 , percent of data = 50 , seed = 99
+IP_lin_hhs 999 50 , Bias: 0.04 0.68 , SDev: 13.56 0.74 , R2: 0.24 0.06
+IP_mov_hhs 999 50 , Bias: 0.10 0.63 , SDev: 12.57 0.70 , R2: 0.28 0.06
+WDM_hhs 999 50 , Bias: -0.05 0.69 , SDev: 14.00 0.75 , R2: 0.11 0.03
+FDA_hh6_hhs 999 50 , Bias: 0.12 0.68 , SDev: 13.62 0.75 , R2: 0.21 0.05
+MDA_hh5_hhs 999 50 , Bias: 0.14 0.65 , SDev: 12.90 0.70 , R2: 0.27 0.06
+MDC_d3_hhs 999 50 , Bias: -0.28 0.86 , SDev: 18.02 0.86 , R2: 0.00 0.00
+MDC_d7_hhs 999 50 , Bias: 0.01 0.78 , SDev: 16.08 0.80 , R2: 0.00 0.00
+LUT_V1_d3_hhs 999 50 , Bias: -8.07 0.76 , SDev: 19.15 0.80 , R2: 0.03 0.03
+LUT_V1_d7_hhs 999 50 , Bias: -8.50 0.76 , SDev: 19.48 0.82 , R2: 0.03 0.03
+LUT_V1V2_d3_hhs 999 50 , Bias: 0.14 0.72 , SDev: 14.04 0.77 , R2: 0.08 0.06
+LUT_V1V2_d7_hhs 999 50 , Bias: 0.25 0.73 , SDev: 14.07 0.80 , R2: 0.07 0.06
+LUT_V1V2V3_d3_hhs 999 50 , Bias: 0.36 0.63 , SDev: 11.68 0.70 , R2: 0.31 0.10
+LUT_V1V2V3_d7_hhs 999 50 , Bias: 0.53 0.65 , SDev: 11.85 0.72 , R2: 0.27 0.09
+LUT_MDS_d7_hhs 999 50 , Bias: -0.05 0.73 , SDev: 14.29 0.79 , R2: 0.02 0.01
+ANN_CRU_hhs 999 50 , Bias: 0.86 0.63 , SDev: 11.84 0.72 , R2: 0.26 0.07
+ANN_all_hhs 999 50 , Bias: 0.79 0.59 , SDev: 11.33 0.66 , R2: 0.34 0.06
+>>> Number of artificial gaps used for bootstrapping ' days ': 980
+*! Missing artificial gaps due to (partially) incomplete techniques: 9
+>>> Settings for bootstrapping: repetitions = 999 , percent of data = 50 , seed = 99
+IP_lin_days 999 50 , Bias: -11.58 1.84 , SDev: 23.91 1.76 , R2: 0.01 0.01
+IP_mov_days 999 50 , Bias: -11.56 1.85 , SDev: 23.93 1.78 , R2: 0.01 0.01
+WDM_days 999 50 , Bias: -0.17 1.42 , SDev: 14.68 1.48 , R2: 0.01 0.02
+FDA_hh6_days 999 50 , Bias: -0.07 1.46 , SDev: 18.13 1.73 , R2: 0.01 0.01
+MDA_hh5_days 999 50 , Bias: 0.04 1.40 , SDev: 17.33 1.71 , R2: 0.00 0.00
+MDC_d3_days 999 50 , Bias: -0.45 1.41 , SDev: 17.82 1.38 , R2: 0.00 0.00
+MDC_d7_days 999 50 , Bias: -0.14 1.29 , SDev: 15.92 1.31 , R2: 0.00 0.00
+LUT_V1_d3_days 999 50 , Bias: -8.23 1.41 , SDev: 19.42 1.39 , R2: 0.02 0.02
+LUT_V1_d7_days 999 50 , Bias: -8.68 1.38 , SDev: 19.72 1.32 , R2: 0.02 0.02
+LUT_V1V2_d3_days 999 50 , Bias: -0.08 1.35 , SDev: 14.67 1.43 , R2: 0.01 0.01
+LUT_V1V2_d7_days 999 50 , Bias: 0.13 1.31 , SDev: 14.45 1.43 , R2: 0.02 0.01
+LUT_V1V2V3_d3_days 999 50 , Bias: 0.43 1.21 , SDev: 13.58 1.52 , R2: 0.08 0.07
+LUT_V1V2V3_d7_days 999 50 , Bias: 0.68 1.08 , SDev: 13.23 1.39 , R2: 0.09 0.05
+LUT_MDS_d7_days 999 50 , Bias: -0.29 1.36 , SDev: 14.70 1.38 , R2: 0.01 0.01
+ANN_CRU_days 999 50 , Bias: 0.67 0.89 , SDev: 11.70 1.01 , R2: 0.23 0.09
+ANN_all_days 999 50 , Bias: 0.56 0.84 , SDev: 11.23 0.94 , R2: 0.30 0.09
+*** Results saved to _mgf/boot_tNr_202208121237_nt_hhs.csv
+*** Results saved to _mgf/boot_tNr_202208121237_nt_days.csv
+*** Loaded ini: ./example/DE-BaF_tNr/./202208121237/_mgf/ini_202208121237.ini
+*** Loaded bootstrap results of tNr 202208121237 ft_hhs
+*** Loaded bootstrap results of tNr 202208121237 ft_days
+*** Loaded bootstrap results of tNr 202208121237 dt_hhs
+*** Loaded bootstrap results of tNr 202208121237 dt_days
+*** Loaded bootstrap results of tNr 202208121237 nt_hhs
+*** Loaded bootstrap results of tNr 202208121237 nt_days
+Plot saved to: _plots/pba_tNr_202208121237_double_both_ft.pdf
+Plot saved to: _plots/pba_tNr_202208121237_triple_hhs_fdn.pdf
+Plot saved to: _plots/pba_tNr_202208121237_triple_days_fdn.pdf
+*** Results saved to _mgf/berr_tNr_202208121237_ft.csv
+*** Results saved to _mgf/berr_tNr_202208121237_dt.csv
+*** Results saved to _mgf/berr_tNr_202208121237_nt.csv
+*** Results saved to _res/errors_tNr_202208121237.csv
+*** Loaded all data (fluxes, meteo, models, scenarios, filled real gaps) for run tNr 202208121237
+*** Results saved to _res/sums_tNr_202208121237_all.csv
+Plot saved to: _plots/pse_tNr_202208121237_real.pdf
+Plot saved to: _res/sums_tNr_202208121237_all.pdf
+*** Loaded ini: ./example/DE-BaF_tNr/./202208121237/_mgf/ini_202208121237.ini
+*** Loaded all data (fluxes, meteo, models, scenarios, filled real gaps) for run tNr 202208121237
+*** Loaded bootstrap error estimates for run tNr 202208121237
+*** Results saved to _res/sums_tNr_202208121237_ens.csv
+Plot saved to: _res/sums_tNr_202208121237_ens.pdf
+*** Results saved to _res/res_tNr_202208121237_ens.csv
+Plot saved to: _plots/pse_tNr_202208121237_real_ens.pdf
+Plot saved to: _plots/pse_tNr_202208121237_double_real_ens.pdf
+Plot saved to: _plots/pds_tNr_202208121237_daily_real_ens.pdf
+Plot saved to: _plots/pse_tNr_202208121237_double_real_ens_ms.pdf
+Plot saved to: _plots/pds_tNr_202208121237_daily_real_ens_ms.pdf
+*** Ensemble results of the aggregated fluxes: EnsStats
+UpperCI    -1228.7
+UpperUnc      52.0
+UpperTot   -1280.7
+Delta         37.7
+LowerTot   -1318.4
+LowerUnc     -44.8
+LowerCI    -1363.2
+TotalCI      134.6
+Name: tNr (g N ha-1 period-1), dtype: float64
+*** Loaded ini: /Users/antje/W_Projects/MGF/_MultiGapFilling/example/DE-BaF_tNr/./202208121237/_mgf/ini_202208121237.ini
+*** Loaded all data (fluxes, meteo, models, scenarios, filled real gaps) for run tNr 202208121237
+*** Loaded bootstrap error estimates for run tNr 202208121237
+*** Results saved to _res/sums_tNr_202208121237_ens.csv
+Plot saved to: _res/sums_tNr_202208121237_ens.pdf
+*** Results saved to _res/res_tNr_202208121237_ens.csv
+Plot saved to: _plots/pse_tNr_202208121237_real_ens.pdf
+Plot saved to: _plots/pse_tNr_202208121237_double_real_ens.pdf
+Plot saved to: _plots/pds_tNr_202208121237_daily_real_ens.pdf
+Plot saved to: _plots/pse_tNr_202208121237_double_real_ens_ms.pdf
+Plot saved to: _plots/pds_tNr_202208121237_daily_real_ens_ms.pdf
+*** Ensemble results of the aggregated fluxes: EnsStats
+UpperCI    -1228.7
+UpperUnc      52.0
+UpperTot   -1280.7
+Delta         37.7
+LowerTot   -1318.4
+LowerUnc     -44.8
+LowerCI    -1363.2
+TotalCI      134.6
+Name: tNr (g N ha-1 period-1), dtype: float64
